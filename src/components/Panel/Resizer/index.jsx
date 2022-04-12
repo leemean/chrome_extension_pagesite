@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Direction } from './constants';
 import './styles.css';
 
-const Resizer = ({ onResize }) => {
+const Resizer = ({ onResize,onResizeComplete }) => {
   const [direction, setDirection] = useState('');
   const [mouseDown, setMouseDown] = useState(false);
 
@@ -26,7 +26,7 @@ const Resizer = ({ onResize }) => {
   }, [mouseDown, direction, onResize]);
 
   useEffect(() => {
-    const handleMouseUp = () => setMouseDown(false);
+    const handleMouseUp = () => { onResizeComplete();setMouseDown(false);}
 
     window.addEventListener('mouseup', handleMouseUp);
 

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 import '../styles.css';
 
-const PanelHeader = ({ onDrag,headerContent }) => {
+const PanelHeader = ({ onDrag,onMouseUp,headerContent }) => {
   const [mouseDown, setMouseDown] = useState(false);
 
   useEffect(() => {
-    const handleMouseUp = () => setMouseDown(false);
+    const handleMouseUp = () => { onMouseUp();setMouseDown(false); }
 
     window.addEventListener('mouseup', handleMouseUp);
 
