@@ -1,0 +1,23 @@
+.panel {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    max-height: 600px;
+  }
+  
+  .panel__container {
+    height: 100%;
+    position: relative;
+  }
+  
+  .panel__header {
+    padding: 4px;
+    background-color: #e2e0e0;
+  }
+  
+  .panel__content {
+    padding: 4px;
+  }
+  

@@ -7,7 +7,10 @@ module.exports = {
     mode: 'development',
     entry: {
         jquery: 'jquery',
-        app: './src/App.js'
+        app: './src/App.jsx'
+    },
+    resolve: {
+        extensions: ['.js','.json','.jsx'],
     },
     devtool: 'inline-source-map',
     plugins: [
@@ -31,8 +34,13 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
-                include: path.resolve(__dirname, 'src'),
+                test: /\.js|jsx$/,
+                include: [
+                    path.resolve(__dirname, 'src'),
+                ],
+                exclude: [
+                    path.resolve(__dirname, 'mode_modules')
+                ],
                 loader: 'babel-loader'
             },
             {

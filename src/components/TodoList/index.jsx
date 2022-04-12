@@ -40,7 +40,7 @@ class TodoList extends React.Component {
     render(){
         return(
             <div className="card todo-list-container">
-                <div className="card-header"><h3 className="card-title">Todo List</h3></div>
+                {/* <div className="card-header"><h3 className="card-title">Todo List</h3></div> */}
                 <div className="card-body">
                     <ListGroup className="todo-list">
                         {this.state.todoListItems.length===0 ?
